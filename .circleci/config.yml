@@ -11,9 +11,6 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
-          name: Install libs
-          command: sudo apt-get install libxtst6 libgconf-2-4 libnss3 libasound2 libgtk-3-0 libxss1
-      - run:
           name: Install Dependencies
           command: npm install
       - save_cache:
