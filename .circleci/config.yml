@@ -17,12 +17,15 @@ jobs:
           key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
+      - run:
+          name: Run tests
+          command: npm run test
 steps:
   - run:
       name: Install libs
       command: sudo apt-get install libxtst6 libgconf-2-4 libnss3 libasound2 libgtk-3-0 libxss1
   - run: npm install
-  - run: npm run test
+  
   - run:
       name: Deploy
       command: curl -X POST -d {} ${hook}
