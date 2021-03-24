@@ -18,8 +18,12 @@ jobs:
           paths:
             - ./node_modules
       - run:
+          name: Run tests
+          command: npm run test
+      - run:
           name: Checkout Release
           command: git checkout release
+
       - run:
           name: Merge From main
           command: git merge release
