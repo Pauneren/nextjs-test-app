@@ -22,8 +22,8 @@ jobs:
           command: npm run test
       - run:
           name: Checkout Release
-          command: git checkout release
+          command: git checkout release/origin
 
       - run:
           name: Merge From main
-          command: git merge release
+          command: git merge release/origin
