@@ -18,7 +18,8 @@ jobs:
           paths:
             - ./node_modules
       - run:
-          name: Deploy
-          command: curl -X POST -d {} ${hook}
-   
- 
+          name: Checkout Release
+          command: git checkout release
+      - run:
+          name: Merge From main
+          command: git merge main
